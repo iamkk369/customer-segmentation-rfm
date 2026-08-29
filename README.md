@@ -10,8 +10,25 @@ charts, and business insights.
 | Subject | Python for Data Science (BE05000231) — GTU (Gujarat Technological University) |
 | Type | Academic Micro-Project (PBL) |
 | Status | **Complete** — all 15 WBS phases finished |
-| Verified environment | **Python 3.12.10** |
-| Test suite | **491 passed, 0 failed, 0 errors, 0 skipped** |
+| Python | **3.12.10** (verified) — Python **3.14.x is NOT supported** |
+| Tests | **491 passed · 0 failed · 0 errors · 0 skipped** |
+
+## Contents
+
+1. [Project Overview](#1-project-overview)
+2. [Verified Results](#2-verified-results)
+3. [Pipeline](#3-pipeline)
+4. [Storage Strategy (OPTION B)](#4-storage-strategy-option-b)
+5. [Repository Structure](#5-repository-structure)
+6. [Dataset](#6-dataset)
+7. [Getting Started](#7-getting-started)
+8. [Run the Pipeline](#8-run-the-pipeline)
+9. [Testing](#9-testing)
+10. [Outputs](#10-outputs)
+11. [Documentation](#11-documentation)
+12. [Month-wise Submission Breakdown](#12-month-wise-submission-breakdown)
+13. [Syllabus Mapping](#13-syllabus-mapping)
+14. [License](#14-license)
 
 ## 1. Project Overview
 
@@ -19,8 +36,26 @@ charts, and business insights.
 recency, frequency, and monetary value so that retention and marketing actions
 can target the right groups.
 
-**Objective.** Analyze the Online Retail dataset and segment every customer
-into meaningful groups using RFM analysis.
+**Objectives.**
+
+- Analyze the Online Retail dataset end to end with a reproducible pipeline.
+- Clean and validate raw transaction data (missing values, duplicates,
+  invalid records) without altering the immutable raw source.
+- Compute per-customer RFM metrics with deterministic 1–5 scoring.
+- Segment every customer into meaningful groups using RFM analysis.
+- Back the segmentation with descriptive and inferential statistics,
+  visualizations, and business insights.
+
+**Key features.**
+
+- Modular, phase-by-phase pipeline (`main.py` + 8 modules under `src/`).
+- Deterministic, rule-based segmentation (no ML, per the approved project
+  decision) — fully reproducible results.
+- OPTION B storage strategy: intermediates stay in memory; the raw dataset is
+  write-protected at the code level.
+- Descriptive and inferential statistics: Pearson/Spearman correlations,
+  normality tests, Kruskal–Wallis and Mann–Whitney comparisons.
+- Comprehensive test suite: 13 modules, 491 tests, all passing.
 
 **Methodology.**
 - Load and validate the raw CSV (`src/data_loading.py`).
@@ -115,10 +150,11 @@ Customer-Segmentation-RFM/
   included in this repository, so cloning may take longer on slow connections.
   Git LFS is not configured.
 
-## 7. Getting Started (Windows, Python 3.12)
+## 7. Getting Started
 
 > **Important:** Do not use Python 3.14.x for this project. The verified
-> project environment is Python 3.12.10.
+> project environment is Python 3.12.10, and the pinned dependencies are
+> validated against it.
 
 1. Create and activate a virtual environment from the project root:
 
